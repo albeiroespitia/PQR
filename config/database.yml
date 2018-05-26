@@ -19,14 +19,21 @@ default: &default
 
 development:
   <<: *default
-  database: PQR_development
+  adapter: mysql2
+  username: b44ee17af9d75d
+  password: e53695d0
+  host: us-cdbr-iron-east-04.cleardb.net
+  port: 3306
+  database: heroku_d386d1a1f9f5e64
+  pool: 5
+  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: PQR_test
+  database: TestRails_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +56,6 @@ test:
 #
 production:
   <<: *default
-  database: PQR_production
-  username: PQR
-  password: <%= ENV['PQR_DATABASE_PASSWORD'] %>
+  database: TestRails_production
+  username: TestRails
+  password: <%= ENV['TESTRAILS_DATABASE_PASSWORD'] %>
