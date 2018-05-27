@@ -53,7 +53,7 @@
 
   <div class="field">
     <%= form.label :external_file_id %>
-    <%= form.text_field :external_file_id %>
+    <%= form.select "external_file_id", ExternalFile.all.collect {|x| [x.url, x.id]},{}, class: "multiple"%>
   </div>
 
   <div class="actions">

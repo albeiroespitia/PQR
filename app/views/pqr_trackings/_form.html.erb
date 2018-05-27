@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= form.label :pqr_id %>
-    <%= form.text_field :pqr_id %>
+    <%= form.select "pqr_id", Pqr.all.collect {|x| [x.title, x.id]},{}, class: "multiple"%>
   </div>
 
   <div class="field">
     <%= form.label :actual_user_id %>
-    <%= form.text_field :actual_user_id %>
+    <%= form.select "actual_user_id", User.all.collect {|x| [x.first_name, x.id]},{}, class: "multiple"%>
   </div>
 
   <div class="field">
     <%= form.label :dest_user_id %>
-    <%= form.text_field :dest_user_id %>
+    <%= form.select "dest_user_id", User.all.collect {|x| [x.first_name, x.id]},{}, class: "multiple"%>
   </div>
 
   <div class="field">
     <%= form.label :status_id %>
-    <%= form.text_field :status_id %>
+    <%= form.select "status_id", Status.all.collect {|x| [x.status_description, x.id]},{}, class: "multiple"%>
   </div>
 
   <div class="field">
     <%= form.label :department_id %>
-    <%= form.text_field :department_id %>
+    <%= form.select "department_id", Department.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
   </div>
 
   <div class="field">

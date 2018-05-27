@@ -29,7 +29,7 @@
         <td><%= pqr.description %></td>
         <td><%= pqr.date %></td>
         <td><%= pqr.responseDate %></td>
-        <td><%= pqr.external_file %></td>
+        <td><%= pqr.external_file.url %></td>
         <td><%= link_to 'Show', pqr %></td>
         <td><%= link_to 'Edit', edit_pqr_path(pqr) %></td>
         <td><%= link_to 'Destroy', pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>

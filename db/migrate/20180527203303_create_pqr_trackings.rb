@@ -1,6 +1,6 @@
 class CreatePqrTrackings < ActiveRecord::Migration[5.2]
   def change
-    create_table :pqr_trackings, id:false do |t|
+    create_table :pqr_trackings do |t|
       t.references :pqr, foreign_key: true, null: false
       t.references :actual_user, null: false
       t.references :dest_user, null: false

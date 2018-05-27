@@ -14,8 +14,8 @@
   <tbody>
     <% @permission_roles.each do |permission_role| %>
       <tr>
-        <td><%= permission_role.permission %></td>
-        <td><%= permission_role.role %></td>
+        <td><%= permission_role.permission.description %></td>
+        <td><%= permission_role.role.name %></td>
         <td><%= link_to 'Show', permission_role %></td>
         <td><%= link_to 'Edit', edit_permission_role_path(permission_role) %></td>
         <td><%= link_to 'Destroy', permission_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>

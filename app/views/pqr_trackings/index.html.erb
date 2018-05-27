@@ -20,11 +20,11 @@
   <tbody>
     <% @pqr_trackings.each do |pqr_tracking| %>
       <tr>
-        <td><%= pqr_tracking.pqr %></td>
-        <td><%= pqr_tracking.actual_user %></td>
-        <td><%= pqr_tracking.dest_user %></td>
-        <td><%= pqr_tracking.status %></td>
-        <td><%= pqr_tracking.department %></td>
+        <td><%= pqr_tracking.pqr.title %></td>
+        <td><%= pqr_tracking.actual_user.first_name %></td>
+        <td><%= pqr_tracking.dest_user.first_name %></td>
+        <td><%= pqr_tracking.status.status_description %></td>
+        <td><%= pqr_tracking.department.name %></td>
         <td><%= pqr_tracking.date %></td>
         <td><%= pqr_tracking.review %></td>
         <td><%= pqr_tracking.response %></td>

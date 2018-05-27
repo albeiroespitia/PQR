@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_05_27_203303) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "permission_roles", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "permission_roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "permission_id", null: false
     t.bigint "role_id", null: false
     t.datetime "created_at", null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2018_05_27_203303) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pqr_trackings", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "pqr_trackings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "pqr_id", null: false
     t.bigint "actual_user_id", null: false
     t.bigint "dest_user_id", null: false

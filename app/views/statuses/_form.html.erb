@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :status_description %>
-    <%= form.text_field :status_description %>
+    <%= form.select(:status_description, [['No revisado', 'no_revisado'], ['En espera', 'en_espera'], ['Finalizado', 'finalizado'], ['Vencido', 'vencido']]) %>
   </div>
 
   <div class="actions">
