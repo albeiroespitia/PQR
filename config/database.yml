@@ -20,11 +20,11 @@ default: &default
 development:
   <<: *default
   adapter: mysql2
-  username: b44ee17af9d75d
-  password: e53695d0
-  host: us-cdbr-iron-east-04.cleardb.net
+  username: bd73f57ad15a08
+  password: 676a3ddc
+  host: us-cdbr-gcp-east-01.cleardb.net	
   port: 3306
-  database: heroku_d386d1a1f9f5e64
+  database: gcp_7222d710fd2b0a661e60
   pool: 5
   timeout: 5000
 
@@ -34,6 +34,12 @@ development:
 test:
   <<: *default
   database: TestRails_test
+  username: bd73f57ad15a08
+  password: 676a3ddc
+  host: us-cdbr-gcp-east-01.cleardb.net	
+  port: 3306
+  pool: 5
+  timeout: 5000
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
