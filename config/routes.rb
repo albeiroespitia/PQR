@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :pqr_trackings
+  resources :statuses
+  resources :logs
+  resources :pqrs
+  resources :external_files
   devise_for :users
   get 'home/index'
   resources :departments

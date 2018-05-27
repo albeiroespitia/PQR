@@ -4,8 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.phone_field :phone_number, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthdate %><br />
+    <%= f.date_field :birthdate, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
@@ -19,6 +39,16 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role_id %><br />
+    <%= f.select "role_id", Role.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :department_id %><br />
+    <%= f.select "department_id", Department.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
   </div>
 
   <div class="actions">

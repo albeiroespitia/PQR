@@ -10,11 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_27_193603) do
+ActiveRecord::Schema.define(version: 2018_05_27_203303) do
 
   create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "external_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "action", null: false
+    t.datetime "date", null: false
+    t.string "table", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,9 +48,48 @@ ActiveRecord::Schema.define(version: 2018_05_27_193603) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pqr_trackings", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "pqr_id", null: false
+    t.bigint "actual_user_id", null: false
+    t.bigint "dest_user_id", null: false
+    t.bigint "status_id", null: false
+    t.bigint "department_id"
+    t.datetime "date", null: false
+    t.string "review"
+    t.string "response"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actual_user_id"], name: "index_pqr_trackings_on_actual_user_id"
+    t.index ["department_id"], name: "index_pqr_trackings_on_department_id"
+    t.index ["dest_user_id"], name: "index_pqr_trackings_on_dest_user_id"
+    t.index ["pqr_id"], name: "index_pqr_trackings_on_pqr_id"
+    t.index ["status_id"], name: "index_pqr_trackings_on_status_id"
+  end
+
+  create_table "pqrs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email", null: false
+    t.string "title", null: false
+    t.string "subject", null: false
+    t.string "description", null: false
+    t.datetime "date", null: false
+    t.datetime "responseDate", null: false
+    t.bigint "external_file_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["external_file_id"], name: "index_pqrs_on_external_file_id"
+  end
+
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status_description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,6 +121,12 @@ ActiveRecord::Schema.define(version: 2018_05_27_193603) do
 
   add_foreign_key "permission_roles", "permissions"
   add_foreign_key "permission_roles", "roles"
+  add_foreign_key "pqr_trackings", "departments"
+  add_foreign_key "pqr_trackings", "pqrs"
+  add_foreign_key "pqr_trackings", "statuses"
+  add_foreign_key "pqr_trackings", "users", column: "actual_user_id"
+  add_foreign_key "pqr_trackings", "users", column: "dest_user_id"
+  add_foreign_key "pqrs", "external_files"
   add_foreign_key "users", "departments"
   add_foreign_key "users", "roles"
 end

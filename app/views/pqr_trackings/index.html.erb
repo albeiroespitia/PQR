@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pqr Trackings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pqr</th>
+      <th>Actual user</th>
+      <th>Dest user</th>
+      <th>Status</th>
+      <th>Department</th>
+      <th>Date</th>
+      <th>Review</th>
+      <th>Response</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pqr_trackings.each do |pqr_tracking| %>
+      <tr>
+        <td><%= pqr_tracking.pqr %></td>
+        <td><%= pqr_tracking.actual_user %></td>
+        <td><%= pqr_tracking.dest_user %></td>
+        <td><%= pqr_tracking.status %></td>
+        <td><%= pqr_tracking.department %></td>
+        <td><%= pqr_tracking.date %></td>
+        <td><%= pqr_tracking.review %></td>
+        <td><%= pqr_tracking.response %></td>
+        <td><%= link_to 'Show', pqr_tracking %></td>
+        <td><%= link_to 'Edit', edit_pqr_tracking_path(pqr_tracking) %></td>
+        <td><%= link_to 'Destroy', pqr_tracking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pqr Tracking', new_pqr_tracking_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pqr: one
+  actual_user: one
+  dest_user: one
+  status: one
+  department: one
+  date: 2018-05-27 15:33:03
+  review: MyString
+  response: MyString
+
+two:
+  pqr: two
+  actual_user: two
+  dest_user: two
+  status: two
+  department: two
+  date: 2018-05-27 15:33:03
+  review: MyString
+  response: MyString

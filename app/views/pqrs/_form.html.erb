@@ -1,0 +1,62 @@
+<%= form_with(model: pqr, local: true) do |form| %>
+  <% if pqr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pqr.errors.count, "error") %> prohibited this pqr from being saved:</h2>
+
+      <ul>
+      <% pqr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subject %>
+    <%= form.text_field :subject %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :responseDate %>
+    <%= form.datetime_select :responseDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :external_file_id %>
+    <%= form.text_field :external_file_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

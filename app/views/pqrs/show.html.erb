@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @pqr.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @pqr.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @pqr.email %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pqr.title %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @pqr.subject %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @pqr.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @pqr.date %>
+</p>
+
+<p>
+  <strong>Responsedate:</strong>
+  <%= @pqr.responseDate %>
+</p>
+
+<p>
+  <strong>External file:</strong>
+  <%= @pqr.external_file %>
+</p>
+
+<%= link_to 'Edit', edit_pqr_path(@pqr) %> |
+<%= link_to 'Back', pqrs_path %>

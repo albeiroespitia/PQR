@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pqr:</strong>
+  <%= @pqr_tracking.pqr %>
+</p>
+
+<p>
+  <strong>Actual user:</strong>
+  <%= @pqr_tracking.actual_user %>
+</p>
+
+<p>
+  <strong>Dest user:</strong>
+  <%= @pqr_tracking.dest_user %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @pqr_tracking.status %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @pqr_tracking.department %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @pqr_tracking.date %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @pqr_tracking.review %>
+</p>
+
+<p>
+  <strong>Response:</strong>
+  <%= @pqr_tracking.response %>
+</p>
+
+<%= link_to 'Edit', edit_pqr_tracking_path(@pqr_tracking) %> |
+<%= link_to 'Back', pqr_trackings_path %>

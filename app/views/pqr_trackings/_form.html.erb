@@ -1,0 +1,57 @@
+<%= form_with(model: pqr_tracking, local: true) do |form| %>
+  <% if pqr_tracking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pqr_tracking.errors.count, "error") %> prohibited this pqr_tracking from being saved:</h2>
+
+      <ul>
+      <% pqr_tracking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pqr_id %>
+    <%= form.text_field :pqr_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actual_user_id %>
+    <%= form.text_field :actual_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dest_user_id %>
+    <%= form.text_field :dest_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status_id %>
+    <%= form.text_field :status_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department_id %>
+    <%= form.text_field :department_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review %>
+    <%= form.text_field :review %>
+  </div>
+
+  <div class="field">
+    <%= form.label :response %>
+    <%= form.text_field :response %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
