@@ -24,6 +24,10 @@ body {
     display: flex;
     min-height: 100%;
     flex-direction: column;
+    a:hover{
+        text-decoration: none !important;
+        background-color: transparent !important;
+    }
     footer {
         position: absolute;
         bottom: 0;
