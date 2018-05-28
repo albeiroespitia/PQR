@@ -7,7 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<style>
+.userName{
+  height:100%;
+  margin-left:20px;
+  color: #b71c1c;
+  font-size: 15px;
+}
 
+</style>
   </head>
 
   <body>
@@ -20,6 +28,13 @@
       <% else %>
         <li><%= link_to "Registrarse", new_user_registration_path %></li>
         <li><%= link_to "Iniciar Sesion", new_user_session_path %></li>
+      <% end %>
+      </ul>
+
+      <ul class="left hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><span class="userName valign-wrapper"><%= 'Hola '+current_user.first_name %></span></li>
+      <% else %>
       <% end %>
       </ul>
     </div>

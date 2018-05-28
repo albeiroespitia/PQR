@@ -13,7 +13,7 @@ module PQR
     config.load_defaults 5.2
     
     config.to_prepare do
-      Devise::SessionsController.layout "log_in"    
+      #Devise::SessionsController.layout "log_in"    
     end
     
 

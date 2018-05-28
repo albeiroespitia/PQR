@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout "log_in"
+  layout "no_card"
   def index
   end
 end
