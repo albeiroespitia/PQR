@@ -1,5 +1,9 @@
-<h1>New Pqr</h1>
-
-<%= render 'form', pqr: @pqr %>
-
-<%= link_to 'Back', pqrs_path %>
+<% if can? :create, Pqr%>
+    <h1>New Pqr</h1>
+    <%= render 'form', pqr: @pqr %>
+    <%= link_to 'Back', pqrs_path %>
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/users/sign_in"  // put your correct path in a string here
+  </script>
+<% end %>
