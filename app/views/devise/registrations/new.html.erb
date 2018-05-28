@@ -73,7 +73,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="input-field col l12">
+  <div class="input-field col l12" style="display: none;">
     <%= f.label :role_id, class: 'active' %><br />
     <%= f.select "role_id", Role.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
   </div>
