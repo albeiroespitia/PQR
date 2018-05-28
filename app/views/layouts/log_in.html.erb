@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PQR</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <nav>
+    <div class="nav-wrapper grey lighten-2">
+      <a href="/" class="brand-logo center red-text text-darken-4">SISTEMA DE PQR</a>
+      <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Registrarse", new_user_registration_path %></li>
+        <li><%= link_to "Iniciar Sesion", new_user_session_path %></li>
+      <% end %>
+      </ul>
+    </div>
+  </nav>
+  <main>
+        
+      
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </main>
+           <footer class="page-footer grey lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="red-text text-darken-4">Sistema de PQR</h5>
+                <p class="red-text text-darken-4">Desarrollado para la asignatura Arquitectura Software dirigida por Eduard Avendaño en la Universidad del Magdalena</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="red-text text-darken-4">Links</h5>
+                <ul>
+                  <li><a class="red-text text-darken-4" href="#!">Facebook</a></li>
+                  <li><a class="red-text text-darken-4" href="#!">Twitter</a></li>
+                  <li><a class="red-text text-darken-4" href="#!">Instagram</a></li>
+                  <li><a class="red-text text-darken-4" href="#!">YouTube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <span class="red-text text-darken-4">© 2018</span> 
+            <a class="red-text text-darken-4 right" href="#!">Mas Links</a>
+            </div>
+          </div>
+                
+        </footer>
+
+  </body>
+
+</html>
