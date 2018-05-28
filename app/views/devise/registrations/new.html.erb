@@ -4,32 +4,32 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name, class: 'active' %><br />
     <%= f.text_field :first_name, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name, class: 'active' %><br />
     <%= f.text_field :last_name, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, class: 'active' %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :phone_number %><br />
+    <%= f.label :phone_number, class: 'active' %><br />
     <%= f.phone_field :phone_number, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :birthdate %><br />
+    <%= f.label :birthdate, class: 'active' %><br />
     <%= f.date_field :birthdate, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, class: 'active' %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -37,17 +37,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, class: 'active' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-    <%= f.label :role_id %><br />
+  <div class="input-field col l12">
+    <%= f.label :role_id, class: 'active' %><br />
     <%= f.select "role_id", Role.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
   </div>
 
-  <div class="field">
-    <%= f.label :department_id %><br />
+  <div class="input-field col l12">
+    <%= f.label :department_id, class: 'active' %><br />
     <%= f.select "department_id", Department.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
   </div>
 

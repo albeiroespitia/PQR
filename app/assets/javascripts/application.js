@@ -11,8 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
+//= require jquery_ujs
 //= require activestorage
 //= require turbolinks
 //= require materialize-sprockets
-//= require_tree .
+//= require_tree .  
 
+$(document).ready(function(){
+    $('select').formSelect();
+})

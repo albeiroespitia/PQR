@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :permission_id %>
+  <div class="input-field col l12">
+    <%= form.label :permission_id, class: 'active' %>
     <%= form.select "permission_id", Permission.all.collect {|x| [x.description, x.id]},{}, class: "multiple"%>
   </div>
 
-  <div class="field">
-    <%= form.label :role_id %>
+  <div class="input-field col l12">
+    <%= form.label :role_id, class: 'active' %>
     <%= form.select "role_id", Role.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
   </div>
 

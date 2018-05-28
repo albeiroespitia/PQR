@@ -11,8 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :status_description %>
+  <div class="input-field col l12">
+    <%= form.label :status_description, class: 'active' %>
     <%= form.select(:status_description, [['No revisado', 'no_revisado'], ['En espera', 'en_espera'], ['Finalizado', 'finalizado'], ['Vencido', 'vencido']]) %>
   </div>
 

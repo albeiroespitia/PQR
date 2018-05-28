@@ -11,48 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
+  <div class="input-field col l12">
+    <%= form.label :first_name, class: 'active' %>
     <%= form.text_field :first_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
+  <div class="input-field col l12">
+    <%= form.label :last_name, class: 'active' %>
     <%= form.text_field :last_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
+  <div class="input-field col l12">
+    <%= form.label :email, class: 'active' %>
     <%= form.text_field :email %>
   </div>
 
-  <div class="field">
-    <%= form.label :title %>
+  <div class="input-field col l12">
+    <%= form.label :title, class: 'active' %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= form.label :subject %>
+  <div class="input-field col l12">
+    <%= form.label :subject, class: 'active' %>
     <%= form.text_field :subject %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
+  <div class="input-field col l12">
+    <%= form.label :description, class: 'active' %>
     <%= form.text_field :description %>
   </div>
 
-  <div class="field">
-    <%= form.label :date %>
+  <div class="input-field col l12">
+    <%= form.label :date, class: 'active' %>
     <%= form.datetime_select :date %>
   </div>
 
-  <div class="field">
-    <%= form.label :responseDate %>
+  <div class="input-field col l12">
+    <%= form.label :responseDate, class: 'active' %>
     <%= form.datetime_select :responseDate %>
   </div>
 
-  <div class="field">
-    <%= form.label :external_file_id %>
+  <div class="input-field col l12">
+    <%= form.label :external_file_id, class: 'active' %>
     <%= form.select "external_file_id", ExternalFile.all.collect {|x| [x.url, x.id]},{}, class: "multiple"%>
   </div>
 
