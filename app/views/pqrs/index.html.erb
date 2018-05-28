@@ -5,15 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
       <th>Email</th>
-      <th>Title</th>
-      <th>Subject</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th>Responsedate</th>
-      <th>External file</th>
+      <th>Titulo</th>
+      <th>Asunto</th>
+      <th>Descripcion</th>
+      <th>Fecha de creacion</th>
+      <th>Fecha Limite</th>
+      <th>Adjunto</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,9 +30,9 @@
         <td><%= pqr.date %></td>
         <td><%= pqr.responseDate %></td>
         <td><%= pqr.external_file.url %></td>
-        <td><%= link_to 'Show', pqr %></td>
-        <td><%= link_to 'Edit', edit_pqr_path(pqr) %></td>
-        <td><%= link_to 'Destroy', pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to material_icon.search.md_36, pqr %> </td> 
+        <td><%= link_to material_icon.edit.md_36, edit_pqr_path(pqr) %></td>
+        <td><%= link_to material_icon.clear.md_36, pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Pqr', new_pqr_path %>
+<%= link_to 'Crear PQR',new_pqr_path, class:'waves-effect waves-light btn red darken-4' %>
