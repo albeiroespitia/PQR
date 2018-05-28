@@ -57,7 +57,7 @@
 
   <div class="field">
     <%= f.label :birthdate, class: 'active' %><br />
-    <%= f.date_field :birthdate, autofocus: true, autocomplete: "off" %>
+    <%= f.text_field :birthdate, autofocus: true, autocomplete: "off", class:'datepicker' %>
   </div>
 
   <div class="field">
@@ -92,3 +92,15 @@
   <%= render "devise/shared/links" %>
 </div>
 
+<script> document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.datepicker');
+  var instances = M.Datepicker.init(elems, options);
+});
+
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.datepicker').datepicker();
+});
+        
+</script>
