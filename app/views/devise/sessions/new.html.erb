@@ -1,3 +1,37 @@
+<style>
+.actions{
+  margin-top: 30px;
+  text-align:center;
+}
+
+.authButtons{
+  margin-top: 20px;
+  text-align:center;
+}
+
+.authButtons a:visited{
+  color: inherit;
+}
+
+.authButtons a:hover{
+  background-color: transparent;
+  text-decoration: underline;
+  color: inherit;
+}
+
+.submitButton{
+  background-color: #b71c1c;
+}
+
+.submitButton:hover{
+  background-color: #931616;
+}
+
+
+</style>
+
+<center><h5>Por favor, inicia sesion... </h5></center>
+<br/>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -9,17 +43,12 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", :class => 'btn btn-default submitButton' %>
+  </div>
+  <div class="authButtons">
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
-<%= render "devise/shared/links" %>
 
 
