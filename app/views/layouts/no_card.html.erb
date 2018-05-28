@@ -24,6 +24,7 @@
       <a href="/" class="brand-logo center red-text text-darken-4">SISTEMA DE PQR</a>
       <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>
+        <li><a href="/users/edit">Editar Cuenta</a></li>
         <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "Registrarse", new_user_registration_path %></li>

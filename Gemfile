@@ -31,6 +31,7 @@ gem 'materialize-sass', '~> 1.0.0.rc1'
 gem 'material_icons' 
 gem 'rufo'
 gem 'jquery-rails'
+gem 'cancancan'
 
 
 # Use ActiveStorage variant
