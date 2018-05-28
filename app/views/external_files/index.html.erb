@@ -14,9 +14,9 @@
     <% @external_files.each do |external_file| %>
       <tr>
         <td><%= external_file.url %></td>
-        <td><%= link_to 'Show', external_file %></td>
-        <td><%= link_to 'Edit', edit_external_file_path(external_file) %></td>
-        <td><%= link_to 'Destroy', external_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to material_icon.search.md_36, external_file %></td>
+        <td><%= link_to material_icon.edit.md_36, edit_external_file_path(external_file) %></td>
+        <td><%= link_to material_icon.clear.md_36, external_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

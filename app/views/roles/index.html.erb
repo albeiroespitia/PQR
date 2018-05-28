@@ -16,9 +16,9 @@
       <tr>
         <td><%= role.name %></td>
         <td><%= role.description %></td>
-        <td><%= link_to 'Show', role %></td>
-        <td><%= link_to 'Edit', edit_role_path(role) %></td>
-        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to material_icon.search.md_36, role %></td>
+        <td><%= link_to material_icon.edit.md_36, edit_role_path(role) %></td>
+        <td><%= link_to material_icon.clear.md_36, role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

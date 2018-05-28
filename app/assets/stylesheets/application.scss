@@ -20,17 +20,21 @@
 $primary-color: color("red", "darken-4") !default;
 $secondary-color: color("grey", "base") !default;
 @import 'materialize';
+html {
+    height: 100%;
+}
 body {
     background-color: #b71c1c;
     display: flex;
-    min-height: 100%;
+    min-height: 100vh;
     flex-direction: column;
+   
     a:hover{
         text-decoration: none !important;
         background-color: transparent !important;
     }
     footer {
-        position: absolute;
+        position: relative;
         bottom: 0;
         right: 0;
         left: 0;

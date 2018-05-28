@@ -16,9 +16,9 @@
       <tr>
         <td><%= permission_role.permission.description %></td>
         <td><%= permission_role.role.name %></td>
-        <td><%= link_to 'Show', permission_role %></td>
-        <td><%= link_to 'Edit', edit_permission_role_path(permission_role) %></td>
-        <td><%= link_to 'Destroy', permission_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to material_icon.search.md_36, permission_role %></td>
+        <td><%= link_to material_icon.edit.md_36, edit_permission_role_path(permission_role) %></td>
+        <td><%= link_to material_icon.clear.md_36, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
