@@ -18,6 +18,10 @@
 //= require materialize-sprockets
 //= require_tree .  
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
+    Waves.displayEffect();
     $('select').formSelect();
-})
+    $('nav ul a').addClass('valign-wrapper')
+});
+
+

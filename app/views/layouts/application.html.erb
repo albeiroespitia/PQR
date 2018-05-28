@@ -7,12 +7,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
     <nav>
     <div class="nav-wrapper grey lighten-2">
-      <a href="#" class="brand-logo center red-text text-darken-4">SISTEMA DE PQR</a>
+      <a href="/" class="brand-logo center red-text text-darken-4">SISTEMA DE PQR</a>
+      <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Registrarse", new_user_registration_path %></li>
+        <li><%= link_to "Iniciar Sesion", new_user_session_path %></li>
+      <% end %>
+      </ul>
     </div>
   </nav>
   <main>
@@ -56,6 +65,7 @@
           </div>
                 
         </footer>
+
   </body>
 
 </html>
