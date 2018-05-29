@@ -19,9 +19,9 @@
     <% end %>
   </div>
 
-  <div class="input-field col l12">
+  <div class="input-field col l12 hide">
     <%= form.label :actual_user_id, class: 'active' %>
-    <%= form.select "actual_user_id", User.all.collect {|x| [x.first_name, x.id]},{}, class: "multiple"%>
+    <%= form.select "actual_user_id", options_for_select([[current_user.first_name, current_user.id]]), class: "multiple"%>
   </div>
 
   <div class="input-field col l12">
