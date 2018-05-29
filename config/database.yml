@@ -63,6 +63,6 @@ test:
 #
 production:
   <<: *default
-  database: TestRails_production
-  username: TestRails
-  password: <%= ENV['TESTRAILS_DATABASE_PASSWORD'] %>
+  database: gcp_7222d710fd2b0a661e60
+  username: bd73f57ad15a08
+  password: <%= ENV['PQRS_DATABASE_PASSWORD'] %>
