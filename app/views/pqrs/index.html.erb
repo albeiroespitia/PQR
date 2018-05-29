@@ -41,7 +41,9 @@
         <td><%= pqr.description %></td>
         <td><%= pqr.date %></td>
         <td><%= pqr.responseDate %></td>
+        <% if pqr.external_file %>
         <td><%= pqr.external_file.url %></td>
+        <% end %>
         <td><%= link_to material_icon.search.md_36, pqr %> </td> 
         <td><%= link_to material_icon.edit.md_36, edit_pqr_path(pqr) %></td>
         <td><%= link_to material_icon.clear.md_36, pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>

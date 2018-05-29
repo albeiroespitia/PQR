@@ -4,6 +4,36 @@
     <%= link_to 'Back', pqrs_path %>
 <% else %>
     <script type="text/javascript">
+   
         window.location.href="/users/sign_in"  // put your correct path in a string here
   </script>
 <% end %>
+<script>
+
+//pqr_date_5i
+
+// pqr_responseDate_1i año
+// pqr_responseDate_2i mes
+// pqr_responseDate_3i dia
+// pqr_responseDate_4i hora
+// pqr_responseDate_5i minuto 
+Date.prototype.addDays = function(days) {
+  var dat = new Date(this.valueOf());
+  dat.setDate(dat.getDate() + days);
+  return dat;
+}
+
+var dat = new Date();
+
+$('#pqr_date_2i').val(dat.getMonth()+1)
+$('#pqr_date_3i').val(dat.getDate())
+$('#pqr_date_4i').val(dat.getHours())
+$('#pqr_date_5i').val(dat.getMinutes())
+
+dat = dat.addDays(5)
+$('#pqr_responseDate_2i').val(dat.getMonth()+1)
+$('#pqr_responseDate_3i').val(dat.getDate())
+$('#pqr_responseDate_4i').val(dat.getHours())
+$('#pqr_responseDate_5i').val(dat.getMinutes())
+
+</script>
