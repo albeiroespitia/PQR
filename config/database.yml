@@ -63,6 +63,11 @@ test:
 #
 production:
   <<: *default
-  database: TestRails_production
-  username: TestRails
-  password: <%= ENV['TESTRAILS_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  username: bd73f57ad15a08
+  password: <%= ENV['PASSWORD_PQR'] %>
+  host: us-cdbr-gcp-east-01.cleardb.net	
+  port: 3306
+  database: gcp_7222d710fd2b0a661e60
+  pool: 5
+  timeout: 5000
