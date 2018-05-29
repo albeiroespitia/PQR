@@ -1,6 +1,13 @@
+<% if can? :edit, Role%>
+
 <h1>Editing Role</h1>
 
 <%= render 'form', role: @role %>
 
 <%= link_to 'Show', @role %> |
 <%= link_to 'Back', roles_path %>
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>

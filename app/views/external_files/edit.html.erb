@@ -1,6 +1,13 @@
+<% if can? :edit, ExternalFile%>
+
 <h1>Editing External File</h1>
 
 <%= render 'form', external_file: @external_file %>
 
 <%= link_to 'Show', @external_file %> |
 <%= link_to 'Back', external_files_path %>
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>

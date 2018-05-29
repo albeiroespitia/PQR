@@ -1,0 +1,48 @@
+<center> <h4>Mover PQR a otro departamento</h4> </center>
+<%= form_for @pqr_trackings, :html => {:style => "width: 100%;"} do |form| %>
+
+  <div class="input-field col l12">
+    <%= form.label :pqr_id, class: 'active' %>
+      <%= form.select "pqr_id", options_for_select(Pqr.find_by_sql("SELECT *,pqr_trackings.id AS pqr_trackings_id FROM pqr_trackings INNER JOIN pqrs ON pqr_id = pqrs.id WHERE department_id = #{current_user.department_id}").map{|x| [x.title, x.pqr_id]}), class: "multiple"%>
+  </div>
+
+  <div class="input-field col l12">
+    <%= form.label :actual_user_id, class: 'active' %>
+    <%= form.select "actual_user_id", User.all.collect {|x| [x.first_name, x.id]},{}, class: "multiple"%>
+  </div>
+
+  <div class="input-field col l12">
+    <%= form.label :dest_user_id, class: 'active' %>
+    <%= form.select "dest_user_id", User.all.collect {|x| [x.first_name, x.id]},{}, class: "multiple"%>
+  </div>
+
+  <div class="input-field col l12">
+    <%= form.label :status_id, class: 'active' %>
+    <%= form.select "status_id", Status.all.collect {|x| [x.status_description, x.id]},{}, class: "multiple"%>
+  </div>
+
+  <div class="input-field col l12">
+    <%= form.label :department_id, class: 'active' %>
+    <%= form.select "department_id", Department.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
+  </div>
+
+  <div class="input-field col l12">
+    <%= form.label :date, class: 'active' %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="input-field col l12">
+    <%= form.label :review, class: 'active' %>
+    <%= form.text_field :review %>
+  </div>
+
+  <div class="input-field col l12">
+    <%= form.label :response, class: 'active' %>
+    <%= form.text_field :response %>
+  </div>
+
+  <div class="actions">
+    <center><%= form.submit 'Mover PQR', :class => 'btn btn-default' %></center>
+  </div>
+
+<% end %>

@@ -1,4 +1,9 @@
+<% if can? :create, PqrTracking%>
 <center><h4>Mover PQR</h4></center>
 
 <%= render 'form', pqr_tracking: @pqr_tracking %>
-
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>

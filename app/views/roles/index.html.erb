@@ -1,3 +1,5 @@
+<% if can? :read, Role%>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Roles</h1>
@@ -27,3 +29,8 @@
 <br>
 
 <%= link_to 'New Role', new_role_path %>
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>

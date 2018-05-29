@@ -61,6 +61,13 @@ class PqrTrackingsController < ApplicationController
     end
   end
 
+
+  #Vista de administrador
+  def departmentView
+    @pqr_trackings = PqrTracking.new
+    render 'vistaDepartamentos'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pqr_tracking
