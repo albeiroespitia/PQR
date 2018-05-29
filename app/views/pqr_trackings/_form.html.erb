@@ -21,15 +21,15 @@
 
   <div class="input-field col l12 hide">
     <%= form.label :actual_user_id, class: 'active' %>
-    <%= form.select "actual_user_id", options_for_select([[current_user.first_name, current_user.id]]), class: "multiple"%>
+    <%= form.select "actual_user_id", options_for_select([[ current_user.first_name, current_user.id]]), class: "multiple"%>
   </div>
 
   <div class="input-field col l12 hide">
     <%= form.label :dest_user_id, class: 'active' %>
-    <%= form.select "dest_user_id", User.where("role_id = 31").collect {|x| [x.first_name, {value: x.id , value: x.id}] },{}, class: "multiple"%>
+    <%= form.select "dest_user_id", User.all.collect {|x| [x.first_name, {value: x.id , value: x.id}] },{}, class: "multiple"%>
   </div>
 
-  <div class="input-field col l12">
+  <div class="input-field col l12 hide">
     <%= form.label :status_id, class: 'active' %>
     <%= form.select "status_id",  Status.all.collect {|x| [x.status_description, x.id]},{}, class: "multiple"%>
   </div>
@@ -39,7 +39,7 @@
     <%= form.select "department_id", Department.all.collect {|x| [x.name, x.id]},{}, class: "multiple"%>
   </div>
 
-  <div class="input-field col l12">
+  <div class="input-field col l12 hide">
     <%= form.label :date, class: 'active' %>
     <%= form.datetime_select :date %>
   </div>
@@ -59,6 +59,12 @@
   </div>
 <% end %>
 <script>
+
+var dat = new Date();
+$('#pqr_tracking_date_2i').val(dat.getMonth()+1)
+$('#pqr_tracking_date_3i').val(dat.getDate())
+$('#pqr_tracking_date_4i').val(dat.getHours())
+$('#pqr_tracking_date_5i').val(dat.getMinutes())
 
 $( "#pqr_tracking_department_id" ).change(function() {
   updateSelect();
