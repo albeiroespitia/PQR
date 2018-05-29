@@ -1,3 +1,4 @@
+<% if can? :read, PqrTracking%>
 <p id="notice"><%= notice %></p>
 
 <h1>Pqr Trackings</h1>
@@ -39,3 +40,8 @@
 <br>
 
 <%= link_to 'New Pqr Tracking', new_pqr_tracking_path %>
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>

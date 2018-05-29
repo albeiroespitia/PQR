@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
+<% if can? :read, Status%>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Status description:</strong>
-  <%= @status.status_description %>
-</p>
+  <p>
+    <strong>Status description:</strong>
+    <%= @status.status_description %>
+  </p>
 
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+  <%= link_to 'Edit', edit_status_path(@status) %> |
+  <%= link_to 'Back', statuses_path %>
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>

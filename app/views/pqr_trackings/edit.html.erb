@@ -1,6 +1,12 @@
+<% if can? :edit, PqrTracking%>
 <h1>Editing Pqr Tracking</h1>
 
 <%= render 'form', pqr_tracking: @pqr_tracking %>
 
 <%= link_to 'Show', @pqr_tracking %> |
 <%= link_to 'Back', pqr_trackings_path %>
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>

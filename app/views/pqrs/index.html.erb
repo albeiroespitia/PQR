@@ -1,60 +1,67 @@
-<p id="notice"><%= notice %></p>
+<% if can? :read, Pqr%>
+  <p id="notice"><%= notice %></p>
 
-<h1>Pqrs</h1>
+  <h1>Pqrs</h1>
 
 
-<div class="nav-wrapper col s4">
-  <form>
-    <div class="input-field">
-      <input id="search" style="height:190%;" type="search" required>
-      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-      <i class="material-icons">close</i> 
-    </div>
-  </form>
-</div>
+  <div class="nav-wrapper col s4">
+    <form>
+      <div class="input-field">
+        <input id="search" style="height:190%;" type="search" required>
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i> 
+      </div>
+    </form>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Email</th>
-      <th>Titulo</th>
-      <th>Asunto</th>
-      <th>Descripcion</th>
-      <th>Fecha de creacion</th>
-      <th>Fecha Limite</th>
-      <th>Adjunto</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pqrs.each do |pqr| %>
+  <table>
+    <thead>
       <tr>
-      
-        <td><%= pqr.first_name %></td>
-        <td><%= pqr.last_name %></td>
-        <td><%= pqr.email %></td>
-        <td><%= pqr.title %></td>
-        <td><%= pqr.subject %></td>
-        <td><%= pqr.description %></td>
-        <td><%= pqr.date %></td>
-        <td><%= pqr.responseDate %></td>
-        <% if pqr.external_file %>
-        <td><%= pqr.external_file.url %></td>
-        <% end %>
-        <td><%= link_to material_icon.search.md_36, pqr %> </td> 
-        <td><%= link_to material_icon.edit.md_36, edit_pqr_path(pqr) %></td>
-        <td><%= link_to material_icon.clear.md_36, pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Titulo</th>
+        <th>Asunto</th>
+        <th>Descripcion</th>
+        <th>Fecha de creacion</th>
+        <th>Fecha Limite</th>
+        <th>Adjunto</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>  
+    </thead>
 
-<br>
-<% if current_user %>
-<% if current_user.role.name == 'Admin' %>
-<%= link_to 'Crear PQR',new_pqr_path, class:'buttonSubmit waves-effect waves-light btn red darken-4' %>
-<% end %>
+    <tbody>
+      <% @pqrs.each do |pqr| %>
+        <tr>
+        
+          <td><%= pqr.first_name %></td>
+          <td><%= pqr.last_name %></td>
+          <td><%= pqr.email %></td>
+          <td><%= pqr.title %></td>
+          <td><%= pqr.subject %></td>
+          <td><%= pqr.description %></td>
+          <td><%= pqr.date %></td>
+          <td><%= pqr.responseDate %></td>
+          <% if pqr.external_file %>
+          <td><%= pqr.external_file.url %></td>
+          <% end %>
+          <td><%= link_to material_icon.search.md_36, pqr %> </td> 
+          <td><%= link_to material_icon.edit.md_36, edit_pqr_path(pqr) %></td>
+          <td><%= link_to material_icon.clear.md_36, pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>  
+
+  <br>
+  <% if current_user %>
+  <% if current_user.role.name == 'Admin' %>
+  <%= link_to 'Crear PQR',new_pqr_path, class:'buttonSubmit waves-effect waves-light btn red darken-4' %>
+  <% end %>
+  <% end %>
+<% else %>
+    <script type="text/javascript">
+   
+        window.location.href="/"  // put your correct path in a string here
+  </script>
 <% end %>

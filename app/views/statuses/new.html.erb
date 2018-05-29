@@ -1,5 +1,11 @@
+<% if can? :create, Status%>
 <h1>New Status</h1>
 
 <%= render 'form', status: @status %>
 
 <%= link_to 'Back', statuses_path %>
+<% else %>
+    <script type="text/javascript">
+        window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>
