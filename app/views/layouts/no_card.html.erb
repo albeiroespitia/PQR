@@ -24,6 +24,9 @@
       <a href="/" class="brand-logo center red-text text-darken-4">SISTEMA DE PQR</a>
       <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>
+        <% if current_user.role.name == "Director" %>
+          <li><a href="/pqr_trackings/new">Asignar PQR</a></li>
+        <% end %>
         <li><a href="/users/edit">Editar Cuenta</a></li>
         <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
       <% else %>

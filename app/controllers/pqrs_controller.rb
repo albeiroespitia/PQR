@@ -1,5 +1,6 @@
 class PqrsController < ApplicationController
   before_action :set_pqr, only: [:show, :edit, :update, :destroy]
+  helper_method :pqrAssignCheck
 
   # GET /pqrs
   # GET /pqrs.json
