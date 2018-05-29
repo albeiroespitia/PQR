@@ -26,6 +26,8 @@
       <% if user_signed_in? %>
         <% if current_user.role.name == "Director" %>
           <li><a href="/pqr_trackings/new">Asignar PQR</a></li>
+        <% elsif current_user.role.name == "Lider" %>
+          <li><a href="/pqr_trackingsDepartment">Mover PQR a otro departamento</a></li>
         <% end %>
         <li><a href="/users/edit">Editar Cuenta</a></li>
         <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
