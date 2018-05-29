@@ -65,7 +65,7 @@ production:
   <<: *default
   adapter: mysql2
   username: bd73f57ad15a08
-  password: 676a3ddc
+  password: <%= ENV['PASSWORD_PQR'] %>
   host: us-cdbr-gcp-east-01.cleardb.net	
   port: 3306
   database: gcp_7222d710fd2b0a661e60
