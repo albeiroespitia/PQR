@@ -13,7 +13,10 @@
 
   <div class="input-field col l12">
     <%= form.label :pqr_id, class: 'active' %>
-    <%= form.select "pqr_id", Pqr.all.collect {|x| [x.title, x.id]},{}, class: "multiple"%>
+    <% if current_user.role.name == "Director" %>
+      <%= form.select "pqr_id", options_for_select(Pqr.find_by_sql('SELECT *,pqrs.id AS pqr_id FROM pqrs LEFT JOIN pqr_trackings ON pqrs.id = pqr_trackings.id WHERE pqr_trackings.id IS NULL').map{|x| [x.title, x.pqr_id]}), class: "multiple"%>
+    <% else %>
+    <% end %>
   </div>
 
   <div class="input-field col l12">
@@ -52,6 +55,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <center><%= form.submit 'Mover PQR', :class => 'btn btn-default' %></center>
   </div>
 <% end %>
