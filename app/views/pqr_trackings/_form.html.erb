@@ -76,7 +76,7 @@ function updateSelect(){
     var departamento = $('#pqr_tracking_department_id').val();
     for(var i=0; i<data.data.length; i++){
     
-      if(data.data[i].department_id == departamento && data.data[i].role_id == 31){
+      if(data.data[i].department_id == departamento && data.data[i].role_id == 21){
         $('#pqr_tracking_dest_user_id').html('');
         $('#pqr_tracking_dest_user_id').append("<option value='"+data.data[i].id+"'>"+data.data[i].first_name+"</option>")  
     
