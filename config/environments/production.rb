@@ -92,8 +92,8 @@ Rails.application.configure do
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "luchoportu1013@gmail.com",
-    password: "Steinsgate1013"
+    user_name: "restaurar.contrasena@gmail.com",
+    password: "wdwrzloeyuykboix"
   }
 
   # Use a different logger for distributed setups.
